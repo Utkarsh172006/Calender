@@ -1,0 +1,74 @@
+import java.util.*;
+class CalenderReminder
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int exit= 0;
+        int lim=0;
+        int day[]=new int[100];
+        int mon[]=new int[100];
+        int year[]=new int[100];
+        String rem[]=new String[100];
+        while(exit==0)
+        {
+            System.out.println();
+            System.out.println("PRESS 1: ADD A REMINDER");
+            System.out.println("PRESS 2: VIEW REMINDER");
+            System.out.println("PRESS 3: EXIT");
+            System.out.println();
+            System.out.println("ENTER YOUR CHOICE");
+            int out=sc.nextInt();
+
+
+            switch(out)
+            {
+                case 1:
+                    
+                        System.out.println("ENTER THE DATE IN WHICH U HAVE TO ADD THE REMINDER :");
+                        System.out.println();
+                        System.out.print("ENTER DAY: ");
+                        day[lim]= sc.nextInt();
+                        System.out.println();
+                        System.out.print("ENTER MONTH (in numbers): ");
+                        mon[lim]=sc.nextInt();
+                        System.out.println();
+                        System.out.print("ENTER YEAR: ");
+                        year[lim]=sc.nextInt();
+                        System.out.println();
+                        sc.nextLine();
+                        System.out.println("ENTER REMINDER: ");
+                        rem[lim]=sc.nextLine();
+                        System.out.println();
+                        System.out.println("REMINDER ADDED");
+                        lim=lim+1;
+                    
+                    break;
+                
+                case 2:
+                    
+                        System.out.println("THE REMINDER LIST IS HERE: ");
+                        System.out.println();
+                        for(int i=0;i<lim;i++)
+                        {
+                            System.out.print("ON "+day[i]+" / "+mon[i]+" / "+ year[i] +" THE REMINDER IS: ");
+                            System.out.print(rem[i]+" ");
+                            System.out.println();
+                        }
+                    
+                    break;
+                
+                case 3:
+                    
+                        System.out.println("EXIT EXECUTED...");
+                        exit=1;
+                       
+                    break;
+
+                default:
+                        System.out.println("WRONG INPUT");
+                        break;
+            }
+        }
+    }
+}
